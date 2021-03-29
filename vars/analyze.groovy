@@ -4,7 +4,7 @@ import java.util.stream.*
 
 @NonCPS
 
-void report()
+def call()
 
 {
 
