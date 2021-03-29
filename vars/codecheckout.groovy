@@ -1,10 +1,10 @@
-void call(def url, def branch){
+void call(){
 checkout(
 [$class: 'GitSCM', 
-branches: [[name: '*/master']], 
+branches: [[name: '*/main']], 
 extensions: [], 
 userRemoteConfigs: [
 [credentialsId: 'cafd918a-206d-4a9d-8165-5bc14ec467a8', 
-url: 'https://github.com/MonikaPaulin/SharedLib.git']
+url: 'https://github.com/MonikaPaulin/Release-Report-Jenkins-Pipeline.git']
 ]])
 }
