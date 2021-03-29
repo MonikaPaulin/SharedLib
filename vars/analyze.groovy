@@ -71,7 +71,7 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 
 		passedEnvList = passedList.stream().map({mp -> mp.get("Environment")}).collect(Collectors.joining("|"));
 
-		comments = passedList.stream().map({mp -> mp.get("Status")}));
+		comments = passedList.stream().map({mp -> mp.get("Status")});
 
 	}
 
@@ -79,7 +79,7 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 
 		failedEnvList = failedList.stream().map({mp -> mp.get("Environment")}).collect(Collectors.joining("|"));
 
-		comments = failedList.stream().map({mp -> mp.get("Status")}));
+		comments = failedList.stream().map({mp -> mp.get("Status")});
 	}
 
 	
