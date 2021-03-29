@@ -1,4 +1,4 @@
-void checkout(def url, def branch){
+void call(def url, def branch){
 checkout(
 [$class: 'GitSCM', 
 branches: [[name: '*/master']], 
