@@ -4,7 +4,7 @@ import java.util.stream.*
 
 @NonCPS
 
-def call()
+void call()
 
 {
 
