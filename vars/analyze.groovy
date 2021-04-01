@@ -70,7 +70,12 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 	if (passedList != null && passedList.size() > 0) {
 
 		passedEnvList = passedList.stream().map({mp -> mp.get("Environment")}).collect(Collectors.joining("|"));
+println("___________________passedEnvList_________________________")
+println ("${passedEnvList}")
 
+	println ("${passedList}")
+
+	println("___________________________________________")
 		List<String> passComments = passedList.stream().map({mp -> String.format(mp.get("Status"))}).collect(Collectors.toList());
 		
 		if(!passComments.isEmpty()){
@@ -82,11 +87,7 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 	if (failedList != null && failedList.size() > 0) {
 
 		failedEnvList = failedList.stream().map({mp -> mp.get("Environment")}).collect(Collectors.joining("|"));
-println("___________________failedEnvList_________________________")
 
-	println ("${failedEnvList}")
-
-	println("___________________________________________")
 		List<String> failComments = failedList.stream().map({mp -> String.format(mp.get("Status"))}).collect(Collectors.toList());
 		if(!failComments.isEmpty()){
 		comments = failComments.get(0);
