@@ -85,7 +85,7 @@ println("buildList")
 		if(!passComments.isEmpty()){
 		comments = passComments.get(0);
 		}
-
+println ("${passedEnvList}")
 	}
 
 	if (failedList != null && failedList.size() > 0) {
@@ -96,7 +96,7 @@ println("buildList")
 		if(!failComments.isEmpty()){
 		comments = failComments.get(0);
 		}
-
+	}
 	output.append('\n');
 
 	output.append(buildList.get(0).get("AppID") + delimitter);
@@ -112,7 +112,7 @@ println("buildList")
 	output.append(comments);
 		println ("${output}")
 
-}
+
 
 }
 
