@@ -49,13 +49,24 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 
 	.collect(Collectors.toList());
 
-	
+	println("___________________failedList_________________________")
 
-	List<CSVRecord> passedList = buildList.stream().filter({f -> !f.get("Status").contains("Passed")})
+
+	println ("${failedList}")
+
+	println("___________________________________________")
+
+	List<CSVRecord> passedList = buildList.stream().filter({f -> !f.get("Status").contains("Failed")})
 
 	.collect(Collectors.toList());
 
 	
+	println("___________________passedList_________________________")
+
+
+	println ("${passedList}")
+
+	println("___________________________________________")
 
 	String delimitter = ",";
 
@@ -70,12 +81,7 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 	if (passedList != null && passedList.size() > 0) {
 
 		passedEnvList = passedList.stream().map({mp -> mp.get("Environment")}).collect(Collectors.joining("|"));
-println("___________________passedEnvList_________________________")
-println ("${passedEnvList}")
 
-	println ("${passedList}")
-
-	println("___________________________________________")
 		List<String> passComments = passedList.stream().map({mp -> String.format(mp.get("Status"))}).collect(Collectors.toList());
 		
 		if(!passComments.isEmpty()){
