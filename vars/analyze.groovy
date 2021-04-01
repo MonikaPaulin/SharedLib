@@ -56,6 +56,12 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 	passedList = buildList.stream().filter({f -> !f.get("Status").contains("Failed")})
 
 	.collect(Collectors.toList());
+	println("___________________passedList_________________________")
+
+
+	println ("${passedList}")
+
+	println("___________________________________________")
 
 	String delimitter = ",";
 
