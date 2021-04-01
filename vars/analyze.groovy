@@ -86,7 +86,7 @@ println("___________________failedEnvList_________________________")
 
 	println ("${failedEnvList}")
 
-	println("___________________________________________
+	println("___________________________________________")
 		List<String> failComments = failedList.stream().map({mp -> String.format(mp.get("Status"))}).collect(Collectors.toList());
 		if(!failComments.isEmpty()){
 		comments = failComments.get(0);
