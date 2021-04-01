@@ -110,6 +110,7 @@ println("buildList")
 	output.append(failedEnvList + delimitter);
 
 	output.append(comments);
+		println ("${output}")
 
 }
 
