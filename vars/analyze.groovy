@@ -46,36 +46,16 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 	List<CSVRecord> failedList = null;
 	List<CSVRecord> passedList = null;
 	List<CSVRecord> buildList = entry.getValue();	
-	println("buildList")
-
-
-	println ("${buildList}")
-
-	println("___________________________________________")
-
+	
 
 	failedList = buildList.stream().filter({f -> f.get("Status").contains("Failed")})
 
 	.collect(Collectors.toList());
 
-	println("___________________failedList_________________________")
-
-
-	println ("${failedList}")
-
-	println("___________________________________________")
 
 	passedList = buildList.stream().filter({f -> !f.get("Status").contains("Failed")})
 
 	.collect(Collectors.toList());
-
-	
-	println("___________________passedList_________________________")
-
-
-	println ("${passedList}")
-
-	println("___________________________________________")
 
 	String delimitter = ",";
 
