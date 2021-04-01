@@ -81,9 +81,9 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 
 	String failedEnvList = "NA";
 
-	String comments = "NA";
+	String comments = "NA";	
 
-	
+	}
 
 	if (passedList != null && passedList.size() > 0) {
 
@@ -105,10 +105,6 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 		if(!failComments.isEmpty()){
 		comments = failComments.get(0);
 		}
-;
-	}
-
-	
 
 	output.append('\n');
 
