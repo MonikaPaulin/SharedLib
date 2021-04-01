@@ -47,7 +47,12 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 	List<CSVRecord> passedList = null;
 	List<CSVRecord> buildList = entry.getValue();	
 	
+println("buildList")
 
+
+	println ("${buildList}")
+
+	println("___________________________________________")
 	failedList = buildList.stream().filter({f -> f.get("Status").contains("Failed")})
 
 	.collect(Collectors.toList());
