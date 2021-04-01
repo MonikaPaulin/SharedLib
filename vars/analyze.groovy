@@ -39,12 +39,12 @@ Map<String, List<CSVRecord>> recordFiltered =   StreamSupport
 		collect(Collectors.groupingBy({record -> record.get("AppID")+"-"+record.get("AppName")+"-"+record.get("ReleaseVersion")} ));
 
 		
-	List<CSVRecord> failedList = null;
-	List<CSVRecord> passedList = null;
+	
 	
 for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 
-
+	List<CSVRecord> failedList = null;
+	List<CSVRecord> passedList = null;
 	List<CSVRecord> buildList = entry.getValue();	
 	println("buildList")
 
@@ -84,9 +84,7 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 	String failedEnvList = "NA";
 
 	String comments = "NA";	
-
-	}
-
+	
 	if (passedList != null && passedList.size() > 0) {
 
 		passedEnvList = passedList.stream().map({mp -> mp.get("Environment")}).collect(Collectors.joining("|"));
