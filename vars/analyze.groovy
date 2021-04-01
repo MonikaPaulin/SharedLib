@@ -39,7 +39,9 @@ Map<String, List<CSVRecord>> recordFiltered =   StreamSupport
 		collect(Collectors.groupingBy({record -> record.get("AppID")+"-"+record.get("AppName")+"-"+record.get("ReleaseVersion")} ));
 
 		
-
+	List<CSVRecord> failedList = null;
+	List<CSVRecord> passedList = null;
+	
 for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 
 
@@ -52,7 +54,7 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 	println("___________________________________________")
 
 
-	List<CSVRecord> failedList = buildList.stream().filter({f -> f.get("Status").contains("Failed")})
+	failedList = buildList.stream().filter({f -> f.get("Status").contains("Failed")})
 
 	.collect(Collectors.toList());
 
@@ -63,7 +65,7 @@ for (Map.Entry<String, List<CSVRecord>> entry : recordFiltered.entrySet()) {
 
 	println("___________________________________________")
 
-	List<CSVRecord> passedList = buildList.stream().filter({f -> !f.get("Status").contains("Failed")})
+	passedList = buildList.stream().filter({f -> !f.get("Status").contains("Failed")})
 
 	.collect(Collectors.toList());
 
